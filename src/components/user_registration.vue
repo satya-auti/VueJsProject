@@ -4,10 +4,13 @@
                 {{JSON.stringify(formValues,null,2)}}
             </pre>
         </div>
+        <!--  -->
     <div class="">
         
 
+
          <form @submit="submitForm" method="post">
+
 
             <table border="2">
                 <caption>User Registration</caption>
@@ -107,29 +110,30 @@
 
 <script>
  export default {
-    name:'App',
-    data(){
-        return {
-            formValues: {
-                firstName: '',
-                lastName: '',
-                email: '',
 
-                gender: '',
-                country: '',
-                terms: "no",
+        name:'App',
+        data(){
+            return {
+                formValues: {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    gender: '',
+                    country: '',
+                    terms: "no",
+                }
+            };
+        },
+        methods: {
+            submitForm(event) {
+                event.preventDefault();
+                console.log("Form Values", this.formValues);
             }
-        };
-    },
-    methods: {
-        submitForm(event) {
-            event.preventDefault();
-            console.log("Form Values", this.formValues);
-        }
-    },
+        },
 
 
 };
+
   
 </script>
 
