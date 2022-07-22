@@ -53,7 +53,7 @@
   import demo from './components/demo.vue'
   import demo2 from './components/demo2.vue'
 
-import Demo2 from './components/demo2.vue'
+// import Demo2 from './components/demo2.vue'
 import user_registration from './components/user_registration.vue'
 
 
