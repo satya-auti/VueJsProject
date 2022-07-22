@@ -4,9 +4,10 @@
                 {{JSON.stringify(formValues,null,2)}}
             </pre>
         </div>
+        <!--  -->
     <div class="">
         
-         <form method="post">
+         <form @submit="submitForm" method="post">
             <table border="2">
                 <caption>User Registration</caption>
                 <tr>
@@ -36,6 +37,22 @@
                     </td>
                 </tr>
 
+                 <tr>
+                    <td>
+                        <label for="gender">Gender</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" value="Male" id="male" v-model="formValues.gender" selected/>
+                        <label for="male">Male</label>
+
+                        <input type="radio" name="gender" value="Female" id="female" v-model="formValues.gender" />
+                        <label for="female">Female</label>
+
+                        <input type="radio" name="gender" value="Other" id="other" v-model="formValues.gender" />
+                        <label for="other">Other</label>
+                    </td>
+                </tr>
+
                 <tr>
                     <td>
                         <label for="country">Country</label>
@@ -59,6 +76,15 @@
 
                 <tr>
                     <td>
+                        <input type="checkbox" name="terms" id="terms" false-value="no" true-value="yes" v-model="formValues.terms"/>
+                    </td>
+                    <td>
+                        <label for="terms">Terms & Conditions</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
                         
                     </td>
                     <td>
@@ -76,18 +102,26 @@
 
 <script>
  export default {
-    name:'App',
-    data(){
-        return {
-            formValues: {
-                firstName: '',
-                lastName: '',
-                email: '',
-                country: '',
+        name:'App',
+        data(){
+            return {
+                formValues: {
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    gender: '',
+                    country: '',
+                    terms: "no",
+                }
+            };
+        },
+        methods: {
+            submitForm(event) {
+                event.preventDefault();
+                console.log("Form Values", this.formValues);
             }
-        };
-    },
-};
+        },
+    }
   
 </script>
 
