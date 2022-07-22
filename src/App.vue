@@ -37,18 +37,26 @@
    <h2 v-if="num===9">The Number is Nine.</h2>
    <h2 v-else>The Number is not Match.</h2>
    <h2></h2>
-   <user_registration></user_registration>
+
+   <user_registration> </user_registration>
+
    <first></first>
    <demo2></demo2>
     <demo></demo>
+
     
+
 </template>
 
 <script>
   import first from './components/first.vue'
   import demo from './components/demo.vue'
   import demo2 from './components/demo2.vue'
-  import user_registration from './components/user_registration.vue'
+
+import Demo2 from './components/demo2.vue'
+import user_registration from './components/user_registration.vue'
+
+
 
 
   export default {
@@ -59,6 +67,7 @@
     demo2,
     user_registration,
    
+
 },
 
     data (){

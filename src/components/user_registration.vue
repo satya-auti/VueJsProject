@@ -7,7 +7,11 @@
         <!--  -->
     <div class="">
         
+
+
          <form @submit="submitForm" method="post">
+
+
             <table border="2">
                 <caption>User Registration</caption>
                 <tr>
@@ -37,6 +41,7 @@
                     </td>
                 </tr>
 
+
                  <tr>
                     <td>
                         <label for="gender">Gender</label>
@@ -52,6 +57,7 @@
                         <label for="other">Other</label>
                     </td>
                 </tr>
+
 
                 <tr>
                     <td>
@@ -76,6 +82,7 @@
 
                 <tr>
                     <td>
+
                         <input type="checkbox" name="terms" id="terms" false-value="no" true-value="yes" v-model="formValues.terms"/>
                     </td>
                     <td>
@@ -85,6 +92,7 @@
 
                 <tr>
                     <td>
+
                         
                     </td>
                     <td>
@@ -102,6 +110,7 @@
 
 <script>
  export default {
+
         name:'App',
         data(){
             return {
@@ -121,7 +130,10 @@
                 console.log("Form Values", this.formValues);
             }
         },
-    }
+
+
+};
+
   
 </script>
 
