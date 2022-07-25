@@ -1,4 +1,7 @@
 <template>
+<child>
+
+</child>
 <div>
             <pre>
                 {{JSON.stringify(formValues,null,2)}}
@@ -109,9 +112,12 @@
 </template>
 
 <script>
+import child from './child.vue'
+
  export default {
 
         name:'App',
+        components:{ child },
         data(){
             return {
                 formValues: {
