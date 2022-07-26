@@ -1,4 +1,7 @@
 <template>
+<child>
+
+</child>
 <div>
             <pre>
                 {{JSON.stringify(formValues,null,2)}}
@@ -9,7 +12,7 @@
         
 
 
-         <form @submit="submitForm" method="post">
+         <form @submit.prevent="submitForm" method="post">
 
 
             <table border="2">
@@ -19,7 +22,7 @@
                         <label for="firstName">First Name</label>
                     </td>
                     <td>
-                        <input type="text" name="firstName" v-model="formValues.firstName" id="firstName" placeholder="First Name" required/>
+                        <input type="text" name="firstName" v-model.trim.lazy="formValues.firstName" id="firstName" placeholder="First Name" required/>
                     </td>
                 </tr>
 
@@ -28,7 +31,7 @@
                         <label for="lastName">Last Name</label>
                     </td>
                     <td>
-                        <input type="text" name="lastName" id="lastName" v-model="formValues.lastName" placeholder="Last Name" required/>
+                        <input type="text" name="lastName" id="lastName" v-model.trim="formValues.lastName" placeholder="Last Name" required/>
                     </td>
                 </tr>
 
@@ -37,7 +40,7 @@
                         <label for="email">Email</label>
                     </td>
                     <td>
-                        <input type="email" name="email" id="email" v-model="formValues.email" placeholder="Email " required/>
+                        <input type="email" name="email" id="email" v-model.trim="formValues.email" placeholder="Email " required/>
                     </td>
                 </tr>
 
@@ -47,14 +50,14 @@
                         <label for="gender">Gender</label>
                     </td>
                     <td>
-                        <input type="radio" name="gender" value="Male" id="male" v-model="formValues.gender" selected/>
-                        <label for="male">Male</label>
+                        &nbsp;<input type="radio" name="gender" value="Male" id="male" v-model="formValues.gender" selected/>
+                        &nbsp; <label for="male">Male</label>  &nbsp;
 
                         <input type="radio" name="gender" value="Female" id="female" v-model="formValues.gender" />
-                        <label for="female">Female</label>
+                        &nbsp; <label for="female">Female</label> &nbsp;
 
                         <input type="radio" name="gender" value="Other" id="other" v-model="formValues.gender" />
-                        <label for="other">Other</label>
+                         &nbsp; <label for="other">Other</label>
                     </td>
                 </tr>
 
@@ -109,9 +112,12 @@
 </template>
 
 <script>
+import child from './child.vue'
+
  export default {
 
         name:'App',
+        components:{ child },
         data(){
             return {
                 formValues: {
@@ -125,8 +131,8 @@
             };
         },
         methods: {
-            submitForm(event) {
-                event.preventDefault();
+            submitForm() {
+                // event.preventDefault();
                 console.log("Form Values", this.formValues);
             }
         },
